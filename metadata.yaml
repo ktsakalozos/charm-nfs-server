@@ -1,4 +1,4 @@
-name: nfs
+name: nfs-server
 summary: NFS formula for shared data storage
 description: |
   Installs and configures an nfs4 daemon with
