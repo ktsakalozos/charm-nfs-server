@@ -1,0 +1,7 @@
+add-export:
+  description: "Add NFS export."
+  params:
+    path:
+      default: "/srv"
+      description: Path to export.
+      type: string

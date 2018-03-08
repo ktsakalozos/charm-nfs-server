@@ -1,0 +1,6 @@
+#!/bin/bash
+# Here put anything that is needed to start the service.
+# Note that currently this is run directly after install
+
+service nfs-kernel-server restart || service nfs-kernel-server start
+status-set active "Ready"

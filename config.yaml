@@ -1,0 +1,5 @@
+options:
+  export_options:
+    type: string
+    default: rw,sync,no_root_squash,no_all_squash
+    description: The default export options

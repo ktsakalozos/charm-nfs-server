@@ -1,0 +1,16 @@
+#!/bin/bash
+set -ue
+
+export_path=`action-get path`
+export_owner="ubuntu"
+
+create_export_path() {
+  umask 002
+  mkdir -p $export_path
+  chown $export_owner.$export_owner $export_path
+}
+[ -d $export_path ] || create_export_path
+
+export_options=`config-get export_options`
+echo "$export_path    *($export_options)" >> /etc/exports
+service nfs-kernel-server restart || service nfs-kernel-server start

@@ -1,0 +1,9 @@
+#!/bin/bash
+set -ue
+
+status-set maintenance "Installing NFS"
+DEBIAN_FRONTEND=noninteractive apt-get -y install -qq nfs-kernel-server
+mkdir -p /var/nfs/general
+chown nobody:nogroup /var/nfs/general
+touch /etc/exports
+echo "/var/nfs/general    *(rw,sync,no_subtree_check)" >> /etc/exports
